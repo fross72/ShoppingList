@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Shopping List</string>
+    <string name="front_page">Список покупок</string>
+    <string name="front_button">Поехали</string>
+</resources>
