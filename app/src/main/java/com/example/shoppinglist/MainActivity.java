@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void changeAction(){
-        Intent intent = new Intent(this, ActualShoppingList.class);
+        Intent intent = new Intent(this, CreatingShoppingList.class);
         startActivity(intent);
     }
 }

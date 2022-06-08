@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/Users/kolv/AndroidStudioProjects/ShoppingList/app/src/main/res/drawable/ic_ShoppingList_background.xml" value="0.14" />
         <entry key="..\:/Users/kolv/AndroidStudioProjects/ShoppingList/app/src/main/res/layout/activity_actual_shopping_list.xml" value="0.25" />
+        <entry key="..\:/Users/kolv/AndroidStudioProjects/ShoppingList/app/src/main/res/layout/activity_creating_shopping_list.xml" value="0.5" />
         <entry key="..\:/Users/kolv/AndroidStudioProjects/ShoppingList/app/src/main/res/layout/activity_main.xml" value="0.371875" />
+        <entry key="..\:/Users/kolv/AndroidStudioProjects/ShoppingList/app/src/main/res/layout/creating_shopping_list.xml" value="0.37083333333333335" />
         <entry key="..\:/Users/kolv/AndroidStudioProjects/ShoppingList/app/src/main/res/layout/goods_list.xml" value="0.1" />
         <entry key="..\:/Users/kolv/AndroidStudioProjects/ShoppingList/app/src/main/res/menu/clear.xml" value="0.33" />
         <entry key="..\:/Users/kolv/AndroidStudioProjects/ShoppingList/app/src/main/res/mipmap-anydpi-v26/ic_ShoppingList.xml" value="0.1995" />

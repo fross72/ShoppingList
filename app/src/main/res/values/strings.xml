@@ -4,4 +4,6 @@
     <string name="front_button">Поехали</string>
     <string name="clear">Очистить</string>
     <string name="goods_name">Товар</string>
+    <string name="good_add">Добавить Товар</string>
+    <string name="goods_confirm">Подтвердить</string>
 </resources>

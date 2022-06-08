@@ -15,7 +15,8 @@ import java.util.ArrayList;
 public class ActualShoppingList extends AppCompatActivity {
 
     private RecyclerView goodsRecView;
-
+    private ArrayList<Good> goods;
+    private GoodsListRecViewAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,13 +24,13 @@ public class ActualShoppingList extends AppCompatActivity {
 
         goodsRecView = findViewById(R.id.goodsRecView);
 
-        ArrayList<Good> goods = new ArrayList<>();
+        goods = new ArrayList<>();
         goods.add(new Good("Sausage"));
         goods.add(new Good("Macaroni"));
         goods.add(new Good("Lettuce"));
         goods.add(new Good("Eggs"));
 
-        GoodsListRecViewAdapter adapter = new GoodsListRecViewAdapter();
+        adapter = new GoodsListRecViewAdapter();
         adapter.setGoods(goods);
 
         goodsRecView.setAdapter(adapter);
@@ -47,6 +48,9 @@ public class ActualShoppingList extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case R.id.clear:
+                goods.clear();
+                adapter.setGoods(goods);
+                goodsRecView.setAdapter(adapter);
                 //TODO Add clearing code
                 return true;
             default:
