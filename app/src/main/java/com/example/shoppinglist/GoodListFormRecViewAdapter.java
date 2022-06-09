@@ -2,6 +2,8 @@ package com.example.shoppinglist;
 
 import android.content.Context;
 import android.media.Image;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +19,12 @@ public class GoodListFormRecViewAdapter extends RecyclerView.Adapter<GoodListFor
 
     Context context;
     private ArrayList<GoodListForm> goodListForms;
+    private String[] goods;
 
     public GoodListFormRecViewAdapter(Context context, ArrayList<GoodListForm> goodListForms) {
         this.context=context;
         this.goodListForms = goodListForms;
+        goods= new String[goodListForms.size()];
     }
 
     @NonNull
@@ -34,7 +38,23 @@ public class GoodListFormRecViewAdapter extends RecyclerView.Adapter<GoodListFor
 
     @Override
     public void onBindViewHolder(@NonNull GoodListFormRecViewAdapter.GoodFormViewHolder holder, int position) {
-       holder.editTextGoodFormName.setHint(goodListForms.get(position).getEditTextGoodFormName().getHint());
+        holder.editTextGoodFormName.setText(goods[holder.getAdapterPosition()]);
+        holder.editTextGoodFormName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                goods[holder.getAdapterPosition()]=s.toString();
+            }
+        });
     }
 
     @Override
@@ -44,8 +64,10 @@ public class GoodListFormRecViewAdapter extends RecyclerView.Adapter<GoodListFor
 
     public void setGoodListForms(ArrayList<GoodListForm> goodListForms) {
         this.goodListForms = goodListForms;
+        goods=new String[goodListForms.size()];
         notifyDataSetChanged();
     }
+
 
     public static class GoodFormViewHolder extends RecyclerView.ViewHolder{
 
@@ -58,5 +80,6 @@ public class GoodListFormRecViewAdapter extends RecyclerView.Adapter<GoodListFor
             this.imageButtonDelete=itemView.findViewById(R.id.imageButtonDelete);
         }
     }
+
 
 }
