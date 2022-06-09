@@ -20,7 +20,7 @@ public class GoodsListRecViewAdapter extends RecyclerView.Adapter<GoodsListRecVi
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.goods_list, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.goods_form, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
@@ -40,7 +40,7 @@ public class GoodsListRecViewAdapter extends RecyclerView.Adapter<GoodsListRecVi
         notifyDataSetChanged();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder{
 
         private TextView goodsName;
 
