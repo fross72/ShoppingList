@@ -55,6 +55,15 @@ public class GoodListFormRecViewAdapter extends RecyclerView.Adapter<GoodListFor
                 goods[holder.getAdapterPosition()]=s.toString();
             }
         });
+
+        holder.imageButtonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goods[holder.getAdapterPosition()]=null;
+                goodListForms.remove(holder.getAdapterPosition());
+                notifyDataSetChanged();
+            }
+        });
     }
 
     @Override
@@ -79,6 +88,10 @@ public class GoodListFormRecViewAdapter extends RecyclerView.Adapter<GoodListFor
             this.editTextGoodFormName=itemView.findViewById(R.id.editTextGoodFormName);
             this.imageButtonDelete=itemView.findViewById(R.id.imageButtonDelete);
         }
+    }
+
+    public String[] retStrings(){
+        return goods; //TODO try to find new way to transmit data from RecycleView
     }
 
 
