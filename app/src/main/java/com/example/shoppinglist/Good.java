@@ -1,10 +1,14 @@
 package com.example.shoppinglist;
 
+import android.widget.CheckBox;
+
 public class Good {
     private String name;
+    private CheckBox box;
 
-    public Good(String name) {
+    public Good(String name, CheckBox box) {
         this.name = name;
+        this.box = box;
     }
 
     public String getName() {

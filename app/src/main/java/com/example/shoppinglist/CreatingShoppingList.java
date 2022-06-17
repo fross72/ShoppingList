@@ -57,7 +57,7 @@ public class CreatingShoppingList extends AppCompatActivity {
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String[] goods = goodListFormRecViewAdapter.retStrings();
+               ArrayList<String> goods = goodListFormRecViewAdapter.retStrings();
                 for(String x:goods){
                     System.out.println(x);
                 }
@@ -88,7 +88,10 @@ public class CreatingShoppingList extends AppCompatActivity {
     }
 
     private void changeAction(){
+        Bundle bundle=new Bundle();
+        bundle.putStringArrayList("finalGoods", goodListFormRecViewAdapter.retStrings());
         Intent intent = new Intent(this, ActualShoppingList.class);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 
